@@ -7,7 +7,7 @@
 # PASO 3, Ya dentro del entorno virtual instalar flask
 #  pip install flask
 
-# PASO 4, Requests en Python, es una librería (biblioteca, Módulo) de Python, podemos instalar Requests con nuestro administrador de paquete pip, el comando es;  pip install requests
+# PASO 4, Requests en Python, es una librería (biblioteca, Módulo,  paquete) de Python, podemos instalar Requests con nuestro administrador de paquete pip, el comando es;  pip install requests
 
 
 # IMPORTANTE, para correr el proyecto solo debes ejecutar el archivo

@@ -10,10 +10,9 @@ app.secret_key = '97110c78ae5105da20fe'
 #Creando mi Decorador para el Home
 @app.route('/', methods=['GET','POST'])
 def inicio():
-    URL_API = 'https://fakestoreapi.com/products?limit=8'
+    URL_API = 'https://jsonplaceholder.typicode.com/todos/5'
     solic_req = requests.get(URL_API)
-    #print(solic_req.json()) #convirtiendo solicitu en formato json
-    data_API = solic_req.json();
+    print(solic_req.json()) #convirtiendo solicitu en formato json
     #Toda la información sobre nuestra petición está ahora almacenada en un objeto Response llamado solic_req
     #print(res.status_code) #comprobar el estado de la peticion
     #print(res.headers)
@@ -27,14 +26,32 @@ def inicio():
         req = requests.get('https://pixabay.com/en/photos/', params=query)
         req.url
     '''
+    # Creando un objeto en Python (dict):
+    persona = '{ "name":"John", "age":30, "city":"New York"}'
+    # json.load() acepta el objeto persona, analiza los datos JSON,
+    # llena un diccionario de Python con los datos y se los devuelve.
+    infoPersona = json.loads(persona)
+    print(infoPersona)
+    
+    person = '{"name": "Bob", "languages": ["English", "French"]}'
+    person_dict = json.loads(person)
+    print( person_dict)
 
+    dataJson = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+    }
+    respJson = json.dumps(dataJson)
+    print(respJson)
 
     if solic_req:
-        print('Respuesta OK')
+        print('Response OK')
     else:
-        print('Respuesta Fallida')
+        print('Response Failed')
 
-    return render_template('public/index.html', miData= data_API)
+    
+    return render_template('public/index.html')
 
 
 #Redireccionando cuando la página no existe

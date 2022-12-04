@@ -1,24 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'imgs/favicon.png') }}">
     <title>Solicitudes HTTP con Flask y Python </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename ='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='css/home.css') }}">
 </head>
+
 <body>
 
     <div class="container">
-    <h1>Solicitudes HTTP en Python con Resquest</h1>
-    <p>Request es una librería para hacer peticiones HTTP en Python</p>
-    <h2>Recordando los tipos de solicitudes HTTP son:</h2>
-        GET 	Retrieve an existing resource.
-        POST 	Create a new resource.
-        PUT 	Update an existing resource.
-        PATCH 	Partially update an existing resource.
-        DELETE
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <h1 class="text-center mt-3">💥 Solicitudes HTTP Python 🐍 con Resquest</h1>
+            </div>
+        </div>
+
+        <p><strong>HTTP:</strong>(Hypertext Transfer Protocol) es un protocolo para la transmisión de datos en la Web.
+        </p>
+        <p><strong>Request </strong> es una librería para hacer peticiones HTTP en Python,
+            recordando los tipos de solicitudes HTTP son:
+        </p>
+
+        <ol>
+            <li><strong>GET:</strong> Solicitar recursos existe</li>
+            <li><strong>POST:</strong> Crear un nuevo recurso</li>
+            <li><strong>PUT:</strong> Actualizar un recurso existente</li>
+            <li><strong>PATCH:</strong> Actualizar parcialmente un recurso existente</li>
+            <li><strong>DELETE:</strong> Borrar un recurso existente</li>
+        </ol>
+
+
+
+
+        <div class="container text-center">
+            <h1>Lista de Productos
+                <hr>
+            </h1>
+        </div>
+
+       <!-- {{ miData }} -->
+        <div class="shell">
+            <div class="container">
+                {% if (miData) %}
+                <div class="row">
+
+                    {% for producto in miData %}
+                    <div class="col col-md-3">
+                        <div class="wsk-cp-product">
+                            <div class="wsk-cp-img">
+                                <img src={{ producto.image }}
+                                    alt="Product" class="img-responsive" />
+                            </div>
+                            <div class="wsk-cp-text">
+                                <div class="title-product">
+                                    <h3>{{ producto.title }}</h3>
+                                </div>
+                                <div class="description-prod">
+                                    <p id="description">
+                                        {{ producto.description }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="wcf-left">
+                                        <span class="price">
+                                          ${{ producto.price}}
+                                        </span>
+                                        <span id="disponible">Disp {{ producto.rating.count }} Uds</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% else %}
+                <div class="col-md-12">
+                    <h1 class="text-center mt-3">
+                        No hay Productos
+                    </h1>
+                </div>
+
+                {% endif %}
+
+            </div>
+        </div>
+
     </div>
 
-    
+
+    <script src="{{ url_for('static', filename ='js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename ='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
