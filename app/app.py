@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, url_for, redirect, jsonify
+from flask import Flask, render_template, url_for, redirect, jsonify
 import requests #Importando libreria Request para hacer peticiones HTTP
 import json #Importando json desde python
  
@@ -15,7 +15,7 @@ def api():
     solic_req = requests.get(URL_API)
     data_API = solic_req.json(); #Este método es conveniente cuando la API devuelve JSON
     #Toda la información sobre nuestra petición está ahora almacenada en un objeto Response llamado solic_req
-    #print(solic_req.json())
+    print(solic_req.json())
     #print(solic_req.status_code) #comprobar el estado de la peticion
 
 
@@ -27,12 +27,10 @@ def api():
 
 
 
-
 #Creando mi Decorador para el Home
 @app.route('/', methods=['GET','POST'])
 def inicio():
-    #URL_API = 'https://jsonplaceholder.typicode.com/todos/8'
-    URL_API = 'https://fakestoreapi.com/products?limit=8'
+    URL_API = 'https://fakestoreapi.com/products'
     solic_req = requests.get(URL_API)
     print(solic_req)
     #print(solic_req.json()) #convirtiendo solicitud en formato json
@@ -40,13 +38,12 @@ def inicio():
     #Toda la información sobre nuestra petición está ahora almacenada en un objeto Response llamado solic_req
     print(solic_req.status_code) #comprobar el estado de la peticion
 
-
     if solic_req.status_code == 200:
-        print('Respuesta OK')
+        print('Respuesta OK 1')
     else:
         print('Respuesta Fallida')
 
-    return render_template('public/index.html', miData= data_API)
+    return render_template('public/index.html', miData = data_API)
 
     
 
