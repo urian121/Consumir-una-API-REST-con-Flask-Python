@@ -145,6 +145,11 @@ color: #888;
   font-weight: bold;
   color: #00a650;
 }
+.miTitle{
+  font-size: 35px;
+  border-bottom: 1px solid #c0c0c0;
+  font-weight: 800;
+}
 .wsk-btn {
   display: inline-block;
   color: #212121;

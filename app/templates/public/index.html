@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +9,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename ='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename ='css/home.css') }}">
 </head>
-
 <body>
 
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12">
-                <h1 class="text-center mt-3">💥 <strong>
-                     Solicitudes HTTP Python 🐍 con Resquests
-                    </strong>
-                    </h1>
+                <h1 class="text-center mt-3 miTitle">💥
+                    Solicitudes HTTP en Python 🐍 con la librería Resquests
+                </h1>
             </div>
         </div>
 
         <p><strong>HTTP:</strong>(Hypertext Transfer Protocol) es un protocolo para la transmisión de datos en la Web.
         </p>
-        <p><strong>Request </strong> es una librería para hacer peticiones HTTP en Python,
+        <p><strong>Requests </strong> es una librería para hacer peticiones HTTP en Python,
             recordando los tipos de solicitudes HTTP son:
         </p>
 
@@ -38,15 +35,13 @@
         </ol>
 
 
-
-
         <div class="container text-center">
-            <h1 class="title">  Lista de Productos 
+            <h1 class="title"> Lista de Productos
                 <hr>
             </h1>
         </div>
 
-       <!-- {{ miData }} -->
+        <!-- {{ miData }} -->
         <div class="shell">
             <div class="container">
                 {% if (miData) %}
@@ -56,8 +51,7 @@
                     <div class="col col-md-3 contenedorCard">
                         <div class="wsk-cp-product">
                             <div class="wsk-cp-img">
-                                <img src={{ producto.image }}
-                                    alt="Product" class="img-responsive" />
+                                <img src={{ producto.image }} alt="Product" class="img-responsive" />
                             </div>
                             <div class="wsk-cp-text">
                                 <div class="title-product mt-3">
@@ -71,7 +65,7 @@
                                 <div class="card-footer">
                                     <div class="wcf-left">
                                         <span class="price">
-                                          ${{ producto.price}}
+                                            ${{ producto.price}}
                                         </span>
                                         <span id="disponible">Disp {{ producto.rating.count }} Uds</span>
                                     </div>
