@@ -20,7 +20,7 @@
 
 
 # Para correr el proyecto: 
-# pyrhon app.py
+# python app.py
 
 
 # 🐍 Gracias por tu descarga, no olvides apoyar a la comunidad WebDeveloper
