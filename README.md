@@ -1,27 +1,44 @@
-# PASO 1, Crear mi entorno virtual
-#  virtualenv -p python3 env o python3 -m venv env
+# Consumir una API REST con Flask Python
 
-# PASO 2, Activar el entorno virtual ejecutando;
-#  . env/Scripts/activate  
- 
-# PASO 3, Ya dentro del entorno virtual instalar flask
-#  pip install flask
+## Requisitos previos
+- Python 3.x instalado en tu sistema.
+- pip (el administrador de paquetes de Python) actualizado.
 
-# PASO 4, Requests en Python, es una librería (biblioteca, Módulo,  paquete) de Python, podemos instalar Requests con nuestro administrador de paquete pip, el comando es;  pip install requests
+## PASO 1: Crear el entorno virtual
+Primero, necesitamos crear un entorno virtual para nuestro proyecto. Un entorno virtual nos permite aislar las dependencias de nuestro proyecto.
 
 
-# IMPORTANTE, para correr el proyecto solo debes ejecutar el archivo
-# requirements.txt con el comando pip install -r requirements.txt en el 
-# mismo se encuentran todas las dependecias del proyecto.
+#### Usando virtualenv
+	virtualenv -p python3 env
 
-# (env)$ deactivate   Para desactivar nuestro entono virtual
- 
-# Comando para actualizar pip: python -m pip install --upgrade pip
+#### O usando el módulo venv de Python
+	python3 -m venv env
 
 
-# Para correr el proyecto: 
-# python app.py
+#### PASO 2: Activar el entorno virtual
+- En Windows
+	 .env\Scripts\activate
+
+- En macOS y Linux
+ 	source env/bin/activate
+
+#### PASO 3: Instalar Flask
+	pip install flask
+
+#### PASO 4: Instalar Requests
+	pip install requests
+
+#### Instalación de dependencias
+	pip install -r requirements.txt
+
+#### Actualizar pip
+	python -m pip install --upgrade pip
+
+#### Correr el proyecto
+	python app.py
 
 
-# 🐍 Gracias por tu descarga, no olvides apoyar a la comunidad WebDeveloper
-# comentando y dejando tu Like 🏆 💥
+
+### 🐍 Gracias por tu descarga, no olvides apoyar a la comunidad WebDeveloper
+## comentando y dejando tu Like 🏆 💥
+
